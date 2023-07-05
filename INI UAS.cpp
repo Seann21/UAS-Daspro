@@ -20,7 +20,6 @@ void tampilanawal() {
          << "4. Pesan Tiket\n"
          << "pilih menu: ";
 }
-
 void Tiket(Data temp[], int jml) {
     cout << "Tiket yang Tersedia\n";
     for (int i = 0; i < jml; i++) {
@@ -29,21 +28,19 @@ void Tiket(Data temp[], int jml) {
             cout << "Kelas: " << temp[i].kelas << endl;
             cout << "Tujuan: " << temp[i].tujuan << endl;
             cout << "Status: " << temp[i].status << endl;
-            cout << "Harga: " << temp[i].harga << endl;
-            cout << endl;
+            cout << "Harga: " << temp[i].harga << endl << endl;;
         }
     }
 }
 
 void SeluruhData(Data temp[], int jml) {
-    cout << "Urutan tiket dari terendah - tertinggi\n";
     for (int i = 0; i < jml; i++) {
         cout << "Maskapai: " << temp[i].pesawat << endl;
         cout << "Kelas: " << temp[i].kelas << endl;
         cout << "Tujuan: " << temp[i].tujuan << endl;
         cout << "Status: " << temp[i].status << endl;
-        cout << "Harga: " << temp[i].harga << endl;
-    }
+        cout << "Harga: " << temp[i].harga << endl << endl;
+    }cout<<endl;
 }
 
 void DataUrut(Data tiket[], int jml) {
@@ -65,14 +62,14 @@ void swap(Data& a, Data& b) {
 int main() {
     int pilih;
     char ulang;
-    const int jml = 10;
+    const int jml = 6;
     Data tiket[jml] = {
         {"Jakarta - Surabaya", 1200000, "tersedia", "Ekonomi", "CITILINK"},
         {"Surabaya - Semarang", 2500000, "tersedia", "Ekslusive", "GARUDA INDONESIA"},
         {"Solo - Bandung", 1400000, "tersedia", "Ekonomi", "LION AIR"},
-        {"Medan - Yogyakarta", 2300000, "tersedia", "Ekslusive", "WINGS AIR"},
+        {"Medan - Yogyakarta", 2300000, "tidak tersedia", "Ekslusive", "WINGS AIR"},
         {"Makassar - Bali", 2000000, "tersedia", "Ekonomi", "AIR ASIA"},
-        {"Kediri - Yogyakarta", 1800000, "tersedia", "Ekonomi", "SRIWIJAYA AIR"}
+        {"Kediri - Yogyakarta", 1800000, "tidak tersedia", "Ekonomi", "SRIWIJAYA AIR"}
     };
 
     do {
@@ -82,14 +79,15 @@ int main() {
         switch (pilih) {
             case 1:
                 system("cls");
-                Tiket(tiket, jml);
+                SeluruhData(tiket, jml);
                 break;
             case 2:
                 system("cls");
                 DataUrut(tiket, jml);
-                Tiket(tiket, jml);
+                SeluruhData(tiket, jml);
                 break;
             case 3:
+            	system("cls");
                 Tiket(tiket, jml);
                 break;
             case 4: {
@@ -100,10 +98,10 @@ int main() {
                 cout << "Masukkan tujuan penerbangan: ";
                 cin.ignore();
                 getline(cin, tujuan);
-
+					
                 cout << "Masukkan jumlah tiket yang dipesan: ";
                 cin >> jumlah;
-
+				system("cls");
                 for (int i = 0; i < jml; i++) {
                     if (tiket[i].tujuan == tujuan && tiket[i].status == "tersedia") {
                         tiketTersedia = true;
