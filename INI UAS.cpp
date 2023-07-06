@@ -19,7 +19,7 @@ void tampilanawal() {
          << "4. Pesan Tiket\n"
          << "pilih menu: ";
 }
-
+//menampilkan seluruh data
 void SeluruhData(Data temp[], int jml) {
     cout << "Tiket List\n";
     for (int i = 0; i < jml; i++) {
@@ -29,6 +29,22 @@ void SeluruhData(Data temp[], int jml) {
         cout << "Status: " << temp[i].status << endl;
         cout << "Harga: " << temp[i].harga << endl << endl;
     }cout<<endl;
+}
+//menampilkan tiket dengan urut terendah ke tertinggi
+void DataUrut(Data tiket[], int jml) {
+    for (int i = 0; i < jml - 1; i++) {
+        for (int j = 0; j < jml - i - 1; j++) {
+            if (tiket[j + 1].harga < tiket[j].harga) {
+                swap(tiket[j + 1], tiket[j]);
+            }
+        }
+    }
+}
+//menukarkan 2 data struct
+void swap(Data& a, Data& b) {
+    Data tmp = a;
+    a = b;
+    b = tmp;
 }
 
 
@@ -52,6 +68,11 @@ int main() {
         switch (pilih) {
             case 1:
                 system("cls");
+                SeluruhData(tiket, jml);
+                break;
+            case 2:
+                system("cls");
+                DataUrut(tiket, jml);
                 SeluruhData(tiket, jml);
                 break;
 		}
