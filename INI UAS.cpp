@@ -47,6 +47,19 @@ void swap(Data& a, Data& b) {
     b = tmp;
 }
 
+//menampilkan tiket yang tersedia
+void Tiket(Data temp[], int jml) {
+    cout << "Tiket yang Tersedia\n";
+    for (int i = 0; i < jml; i++) {
+        if (temp[i].status == "tersedia") {
+            cout << "Maskapai: " << temp[i].pesawat << endl;
+            cout << "Kelas: " << temp[i].kelas << endl;
+            cout << "Tujuan: " << temp[i].tujuan << endl;
+            cout << "Status: " << temp[i].status << endl;
+            cout << "Harga: " << temp[i].harga << endl << endl;;
+        }
+    }
+}
 
 int main() {
     int pilih;
@@ -75,6 +88,10 @@ int main() {
                 DataUrut(tiket, jml);
                 SeluruhData(tiket, jml);
                 break;
+            case 3:
+            	system("cls");
+                Tiket(tiket, jml);
+                break;               
 		}
         cout << "Apakah Anda ingin melanjutkan (y/n)? ";
         cin >> ulang;
