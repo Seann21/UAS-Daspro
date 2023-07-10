@@ -18,6 +18,6 @@ Program ini adalah sebuah program sederhana dalam bahasa pemrograman C++. Progra
 ## Kelompok
 MOH. HASAN EFENDI (2213030023)  
 AHMAD MUHARRAM ALFARISI ()    
-AZRA'I MAHENDRA  ()   
+AZRA'I MAHENDRA  (2213030060)   
 MUHAMMAD FARIZAL AKBAR   ()
 
